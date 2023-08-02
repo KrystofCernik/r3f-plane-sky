@@ -11,7 +11,7 @@ export default function TextSection({ title, subtitle, ...props }) {
 					<Text
 						anchorX={'left'}
 						anchorY={subtitle ? 'bottom' : 'middle'}
-						font="/fonts/Iskry.woff"
+						font="fonts/Iskry.woff"
 						fontSize={ 0.6 }
 						lineHeight={ 1 }
 						maxWidth={ 3.5 }
@@ -24,7 +24,7 @@ export default function TextSection({ title, subtitle, ...props }) {
 					<Text
 						anchorX={'left'}
 						anchorY={title ? 'top' : 'middle'}
-						font="/fonts/Iskry.woff"
+						font="fonts/Iskry.woff"
 						fontSize={ 0.3 }
 						maxWidth={ 2.5 }
 					>
