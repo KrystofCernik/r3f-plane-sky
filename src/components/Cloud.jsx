@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber'
 
 export const Cloud = ({sceneOpacity, ...props}) => {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/public/models/cloud.gltf')
+  const { nodes, materials } = useGLTF('/models/cloud.gltf')
 
   const materialRef = useRef()
 
@@ -28,4 +28,4 @@ export const Cloud = ({sceneOpacity, ...props}) => {
   )
 }
 
-useGLTF.preload('/public/models/cloud.gltf')
+useGLTF.preload('/models/cloud.gltf')

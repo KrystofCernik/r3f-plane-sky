@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei'
 
 export const Paperplane = (props) => {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/public/models/paperplane.glb')
+  const { nodes, materials } = useGLTF('public/models/paperplane.glb')
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh geometry={nodes.Plane.geometry} material={materials.White} />
@@ -15,4 +15,4 @@ export const Paperplane = (props) => {
   )
 }
 
-useGLTF.preload('/public/models/paperplane.glb')
+useGLTF.preload('public/models/paperplane.glb')
