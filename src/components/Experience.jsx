@@ -451,7 +451,7 @@ export const Experience = () => {
 		})
 
 		tl.current.to(backgroundColors.current, {
-			colorA: '#905a96',
+			colorA: '#ad7bb3',
 			colorB: '#7686d6',
 			duration: 1
 		})
