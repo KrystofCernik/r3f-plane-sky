@@ -1,4 +1,179 @@
-#root {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
   width: 100vw;
   height: 100vh;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+	font-family: Iskry;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.overlay.hide {
+  pointer-events: none;
+}
+
+.loader {
+  position: absolute;
+  inset: 0;
+  background: white;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 2s cubic-bezier(0.215, 0.610, 0.355, 1.000), visibility 0.1s 2s;
+}
+
+.loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.end {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 2s 4s cubic-bezier(0.215, 0.610, 0.355, 1.000), visibility 0.05s;
+}
+
+.end.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.intro-scroll {
+  font-family: Iskry;
+  color: #fff;
+  font-size: 1rem;
+  position: absolute;
+  top: 30%;
+  opacity: 0;
+  transition: opacity 1s ease-in, visibility 0.1s 1s;
+}
+
+.overlay.hide .intro-scroll {
+  opacity: 1;
+}
+
+.overlay.scroll .intro-scroll {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.logo {
+  font-family: Iskry;
+  color: #fff;
+  font-size: 6rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  animation: fadeIn 1.5s 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+.logo.end {
+  font-family: Iskry;
+  color: #abaadd;
+  font-size: 6rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  animation: fadeIn 1.5s 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+.intro.hide .logo {
+  animation: fadeOut 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+.intro.hide .explore {
+  animation: fadeOutButton 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+.explore {
+  padding: 1rem 2rem;
+  border: none;
+  font-family: Iskry;
+  font-size: 0.8rem;
+  color: #3535cc;
+  background-color: white;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 7rem;
+  opacity: 0;
+  animation: fadeInButton 1s 1.6s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+  transition: all 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  cursor: pointer;
+}
+
+.explore:hover {
+  color: white;
+  background-color: #3535cc;
+}
+
+@keyframes fadeIn {
+  0% {
+    top: 60%;
+    opacity: 0;
+  }
+  100% {
+    top: 50%;
+    opacity: 1
+  }
+}
+
+@keyframes fadeInButton {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes fadeOutButton {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 45%;
+  }
 }
